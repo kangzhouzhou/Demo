@@ -1,0 +1,31 @@
+﻿syntax="proto3";
+option csharp_namespace="gRPC";
+service Greeter{
+	rpc SayHello(HelloRequest) returns (HelloReply){}
+	rpc SayGoodbye1(GoodbyeRequest) returns(stream GoodbyeReply){}
+	rpc SayGoodbye2(stream GoodbyeRequest) returns(GoodbyeReply){}
+	rpc SayGoodbye3(stream GoodbyeRequest) returns(stream GoodbyeReply){}
+}
+
+message HelloRequest{
+	repeated string names=1;
+}
+
+message HelloReply{
+	repeated string msgs=1;
+}
+
+message GoodbyeRequest{
+	string name=1;
+}
+
+message GoodbyeReply{
+	string msg=1;
+}
+
+enum MsgType{
+	NONE=0;
+	HELLO=1;
+	GOODBYE=2;
+	TEST_NAME=3;
+}
