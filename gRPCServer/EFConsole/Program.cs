@@ -19,7 +19,7 @@ namespace EFConsole
         {
             IHost host = CreateHostBuilder(args).Build();
             host.RunAsync();
-            host.Services.GetRequiredService<EFDemoContext>().Set<Blog>().CountAsync();
+            host.Services.GetRequiredService<EFDemoContext>().Set<User>().CountAsync();
             Console.ReadKey();
         }
         public static IHostBuilder CreateHostBuilder(string[] args)
