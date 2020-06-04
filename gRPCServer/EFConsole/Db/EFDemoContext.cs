@@ -1,5 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
+using Microsoft.EntityFrameworkCore.Query;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -8,15 +9,17 @@ namespace EFConsole.Db
 {
     public class EFDemoContext:DbContext
     {
+        public EFDemoContext()
+        { 
+        }
+
         public EFDemoContext(DbContextOptions<EFDemoContext> options)
             : base(options)
         {
-            
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            Database.Migrate();
             base.OnModelCreating(modelBuilder);
             EntityTypeBuilder<Blog> blogBuilder = modelBuilder.Entity<Blog>();
             blogBuilder.HasKey(x => x.BlogId);
@@ -32,6 +35,11 @@ namespace EFConsole.Db
             EntityTypeBuilder<User> userBuilder = modelBuilder.Entity<User>();
             userBuilder.HasKey(x => x.UserId);
 
+        }
+
+        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        {
+            base.OnConfiguring(optionsBuilder);
         }
     }
 }

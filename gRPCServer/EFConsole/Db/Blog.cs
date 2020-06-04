@@ -13,6 +13,10 @@ namespace EFConsole.Db
 
         public string Url { get; set; }
 
+        public int UserId { get; set; }
+
+        public User User { get; set; }
+
         public List<Post> Posts { get; set; }
     }
 }

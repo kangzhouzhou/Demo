@@ -51,9 +51,11 @@ namespace EFConsole
                     //DbContext服务设置
                     serviceCollection.AddDbContext<EFDemoContext>(dbContextOptionsBuilder =>
                     {
-                        dbContextOptionsBuilder.UseSqlServer(hostBuilderContext.Configuration.GetConnectionString("dbStr"));
+                        dbContextOptionsBuilder.UseSqlServer(hostBuilderContext.Configuration.GetConnectionString("dbStr"), sqlServerDbContextOptionsExtensions =>
+                        {
+                            sqlServerDbContextOptionsExtensions.EnableRetryOnFailure();
+                        });
                     });
-
                 });
         }
     }
