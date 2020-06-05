@@ -7,16 +7,36 @@ namespace EFConsole.Migrations
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.CreateTable(
+                name: "User",
+                columns: table => new
+                {
+                    UserId = table.Column<int>(nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Name = table.Column<string>(nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_User", x => x.UserId);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "Blog",
                 columns: table => new
                 {
                     BlogId = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    Url = table.Column<string>(maxLength: 2000, nullable: true)
+                    Url = table.Column<string>(maxLength: 2000, nullable: true),
+                    UserId = table.Column<int>(nullable: false)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Blog", x => x.BlogId);
+                    table.ForeignKey(
+                        name: "FK_Blog_User_UserId",
+                        column: x => x.UserId,
+                        principalTable: "User",
+                        principalColumn: "UserId",
+                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateTable(
@@ -27,8 +47,7 @@ namespace EFConsole.Migrations
                         .Annotation("SqlServer:Identity", "1, 1"),
                     Title = table.Column<string>(maxLength: 50, nullable: true),
                     Content = table.Column<string>(nullable: true),
-                    BlogKey = table.Column<int>(nullable: false),
-                    BlogId = table.Column<int>(nullable: true)
+                    BlogId = table.Column<int>(nullable: false)
                 },
                 constraints: table =>
                 {
@@ -38,8 +57,13 @@ namespace EFConsole.Migrations
                         column: x => x.BlogId,
                         principalTable: "Blog",
                         principalColumn: "BlogId",
-                        onDelete: ReferentialAction.Restrict);
+                        onDelete: ReferentialAction.Cascade);
                 });
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Blog_UserId",
+                table: "Blog",
+                column: "UserId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Post_BlogId",
@@ -54,6 +78,9 @@ namespace EFConsole.Migrations
 
             migrationBuilder.DropTable(
                 name: "Blog");
+
+            migrationBuilder.DropTable(
+                name: "User");
         }
     }
 }

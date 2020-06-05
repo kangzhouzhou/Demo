@@ -1,5 +1,6 @@
 ﻿using EFConsole.Db;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.ChangeTracking;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -9,6 +10,7 @@ using NLog.Config;
 using NLog.Extensions.Logging;
 using NLog.Targets;
 using System;
+using System.Linq;
 using System.Threading.Tasks;
 
 namespace EFConsole
@@ -18,10 +20,25 @@ namespace EFConsole
         static void Main(string[] args)
         {
             IHost host = CreateHostBuilder(args).Build();
-            host.RunAsync();
-            host.Services.GetRequiredService<EFDemoContext>().Set<User>().CountAsync();
+            Task task = host.RunAsync();
+            User user = new User()
+            {
+                Name = "111",
+                Blogs = new System.Collections.Generic.List<Blog> {
+                new Blog{  Url="htts://dev.haocai.com.cn", Posts=new System.Collections.Generic.List<Post>{ new Post {  Title="1111"} } }
+                }
+            };
+            EFDemoContext context = host.Services.GetService<EFDemoContext>();
+            //context.Database.Migrate();
+
+            EntityEntry<User> ent = context.Set<User>().Attach(user);
+          
+
+            //context.Set<Post>().Add(new Post { Title = "3333" });
+            context.SaveChanges();
             Console.ReadKey();
         }
+
         public static IHostBuilder CreateHostBuilder(string[] args)
         {
             return Host.CreateDefaultBuilder(args)
