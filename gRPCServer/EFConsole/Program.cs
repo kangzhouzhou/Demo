@@ -10,6 +10,7 @@ using NLog.Config;
 using NLog.Extensions.Logging;
 using NLog.Targets;
 using System;
+using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -30,14 +31,15 @@ namespace EFConsole
             };
             EFDemoContext context = host.Services.GetService<EFDemoContext>();
             //context.Database.Migrate();
+            
 
             EntityEntry<User> ent = context.Set<User>().Attach(user);
-          
 
             //context.Set<Post>().Add(new Post { Title = "3333" });
             context.SaveChanges();
             Console.ReadKey();
         }
+
 
         public static IHostBuilder CreateHostBuilder(string[] args)
         {
@@ -72,6 +74,8 @@ namespace EFConsole
                         {
                             sqlServerDbContextOptionsExtensions.EnableRetryOnFailure();
                         });
+
+
                     });
                 });
         }
