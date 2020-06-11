@@ -7,8 +7,6 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace Mall.Inteface.Controllers
 {
-    [Route("api/[controller]")]
-    [ApiController]
     public class IdentityController : BaseController
     {
         public IActionResult Post()
