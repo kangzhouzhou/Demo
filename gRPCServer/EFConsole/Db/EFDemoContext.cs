@@ -30,7 +30,7 @@ namespace EFConsole.Db
             postBuilder.Property(x => x.Title).HasMaxLength(50);
 
             //双导航属性,Blog和Post配置一边即可
-            postBuilder.HasOne(x => x.Blog).WithMany(y => y.Posts).OnDelete
+            postBuilder.HasOne(x => x.Blog).WithMany(y => y.Posts);
 
             EntityTypeBuilder<User> userBuilder = modelBuilder.Entity<User>();
             userBuilder.HasKey(x => x.UserId);

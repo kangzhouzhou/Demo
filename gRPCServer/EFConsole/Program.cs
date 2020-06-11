@@ -26,16 +26,21 @@ namespace EFConsole
             {
                 Name = "111",
                 Blogs = new System.Collections.Generic.List<Blog> {
-                new Blog{  Url="htts://dev.haocai.com.cn", Posts=new System.Collections.Generic.List<Post>{ new Post {  Title="1111"} } }
+                new Blog{  Url="htts://dev.haocai.com.cn", Posts=new System.Collections.Generic.List<Post>{ new Post {  Title="1111"}, new Post { Title = "2222" } } }
                 }
             };
             EFDemoContext context = host.Services.GetService<EFDemoContext>();
-            //context.Database.Migrate();
-            
+            context.Database.Migrate();
 
-            EntityEntry<User> ent = context.Set<User>().Attach(user);
 
-            //context.Set<Post>().Add(new Post { Title = "3333" });
+            EntityEntry<User> ent = context.Set<User>().Add(user);
+            context.SaveChanges();
+            User b = context.Set<User>().Find(3);
+            b.Name = "222";
+            b.Blogs[0].Url = "3333";
+            b.Blogs[0].Posts[0].Title = "222";
+            var sss = context.Set<Post>().Find(4);
+            context.Set<Post>().Remove(sss);
             context.SaveChanges();
             Console.ReadKey();
         }
