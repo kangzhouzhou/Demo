@@ -5,7 +5,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Mall.Dto\Mall.Dto.csproj" />
+    <ProjectReference Include="..\Mall.Application\Mall.Application.csproj" />
   </ItemGroup>
 
 </Project>

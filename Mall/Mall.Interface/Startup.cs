@@ -61,7 +61,7 @@ namespace Mall.Interface
 
             app.UseSwaggerUI(swaggerUIOptions => {
                 swaggerUIOptions.SwaggerEndpoint("/swagger/v1/swagger.json", "Mall API");
-               // swaggerUIOptions.RoutePrefix = string.Empty;
+                swaggerUIOptions.RoutePrefix = string.Empty;
             });
 
             app.UseRouting();

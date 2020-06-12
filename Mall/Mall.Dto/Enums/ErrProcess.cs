@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Mall.InterfaceDto.Base
+namespace Mall.Dto.Base
 {
     /// <summary>
     /// 错误处理方式

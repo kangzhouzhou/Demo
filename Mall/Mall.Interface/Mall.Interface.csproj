@@ -18,7 +18,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Mall.InterfaceDto\Mall.InterfaceDto.csproj" />
+    <ProjectReference Include="..\Mall.Dto\Mall.Dto.csproj" />
   </ItemGroup>
 
 

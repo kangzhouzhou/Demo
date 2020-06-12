@@ -1,8 +1,9 @@
-﻿using System;
+﻿using Mall.Dto.Base;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace Mall.InterfaceDto.Base
+namespace Mall.Dto.Bases
 {    /// <summary>
      /// POST请求体基类:Noce和Timesstamp请求排重
      /// </summary>

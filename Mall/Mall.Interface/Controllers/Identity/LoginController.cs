@@ -2,15 +2,14 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using Mall.InterfaceDto.Base;
-using Mall.InterfaceDto.Identity;
+using Mall.Dto.Identity;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 
 namespace Mall.Interface.Controllers.Identity
 {
-    [Route("api/[controller]")]
+    [Route("Api/Identity/Login")]
     public class LoginController : ApiBaseController<LoginController>
     {
         public LoginController(ILogger<LoginController> logger)
@@ -20,7 +19,7 @@ namespace Mall.Interface.Controllers.Identity
         }
 
         [HttpPost]
-        public string Post([FromBody] LoginPostBody requestBody)
+        public string Post([FromBody]LoginPostBody requestBody)
         {
             return "1";
         }

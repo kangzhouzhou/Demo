@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Text;
 
-namespace Mall.InterfaceDto.Enum
+namespace Mall.Dto.Enum
 {
     /// <summary>
     /// 登录方式

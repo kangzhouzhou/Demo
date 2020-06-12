@@ -36,10 +36,14 @@ namespace Mall.Interface
                 .ConfigureWebHostDefaults(webBuilder =>
                 {
                     webBuilder.UseKestrel(kestrelServerOptions=> {
-                        kestrelServerOptions.ListenAnyIP(5000, listenOptions =>
+                        kestrelServerOptions.Listen(new System.Net.IPAddress(new byte[] { 127, 0, 0, 1 }), 5001, listenOptions =>
+                             {
+                                 listenOptions.Protocols = Microsoft.AspNetCore.Server.Kestrel.Core.HttpProtocols.Http2;
+                                 listenOptions.UseHttps();
+                             });
+                        kestrelServerOptions.Listen(new System.Net.IPAddress(new byte[] { 127, 0, 0, 1 }), 5000, listenOptions =>
                         {
                             listenOptions.Protocols = Microsoft.AspNetCore.Server.Kestrel.Core.HttpProtocols.Http2;
-                            listenOptions.UseHttps();
                         });
                     });
                     webBuilder.UseStartup<Startup>();

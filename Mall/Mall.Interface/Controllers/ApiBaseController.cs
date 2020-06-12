@@ -8,7 +8,6 @@ using Microsoft.Extensions.Logging;
 
 namespace Mall.Interface.Controllers
 {
-    [Route("api/[controller]")]
     [ApiController]
     public class ApiBaseController<T> : ControllerBase
     {
