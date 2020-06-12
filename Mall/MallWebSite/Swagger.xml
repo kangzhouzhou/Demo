@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Mall.Interface</name>
+    </assembly>
+    <members>
+        <member name="T:Mall.Interface.Controllers.Identity.ThirdPartyController">
+            <summary>
+            身份验证
+            </summary>
+        </member>
+        <member name="M:Mall.Interface.Controllers.Identity.ThirdPartyController.Post(Mall.InterfaceDto.Identity.ThirdPartyPostBody)">
+            <summary>
+            
+            </summary>
+            <param name="requestBody"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Mall.Interface.Filters.ActionFilter.LogFilterAttribute">
+            <summary>
+            日志过滤器
+            </summary>
+        </member>
+        <member name="T:Mall.Interface.Filters.ActionFilter.ModelStateFilterAttribute">
+            <summary>
+            模型检查过滤器
+            </summary>
+        </member>
+    </members>
+</doc>

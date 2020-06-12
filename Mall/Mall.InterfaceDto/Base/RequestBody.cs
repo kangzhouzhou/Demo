@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics.CodeAnalysis;
 using System.Text;
 
 namespace Mall.InterfaceDto.Base
@@ -9,5 +10,6 @@ namespace Mall.InterfaceDto.Base
     /// </summary>
     public class RequestBody
     {
+
     }
 }

@@ -3,19 +3,27 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29806.167
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mall.Inteface", "MallWebSite\Mall.Inteface.csproj", "{C572E7BD-3C75-44D5-901C-FA0F8D6C0996}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mall.Application", "Mall.Application\Mall.Application.csproj", "{D7BB6020-EEDB-498E-A24C-56178878E43E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mall.Application", "Mall.Application\Mall.Application.csproj", "{D7BB6020-EEDB-498E-A24C-56178878E43E}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mall.Domain", "Mall.Domain\Mall.Domain.csproj", "{CE3053A3-CB12-4F10-BDD3-A0ADEE2CE9B5}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mall.Infrastructure", "Mall.Infrastructure\Mall.Infrastructure.csproj", "{CC6EF72F-6067-41F5-86B8-4F9955679971}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mall.Domain", "Mall.Domain\Mall.Domain.csproj", "{CE3053A3-CB12-4F10-BDD3-A0ADEE2CE9B5}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Interface", "Interface", "{DB45FA4F-F235-41E9-B74C-938E3ED8398C}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Application", "Application", "{8D95A941-625B-44BE-8826-EC487B583134}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mall.InterfaceDto", "Mall.InterfaceDto\Mall.InterfaceDto.csproj", "{52C7369F-4C8B-4C92-9CD2-248C0C69F56F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mall.InterfaceDto", "Mall.InterfaceDto\Mall.InterfaceDto.csproj", "{52C7369F-4C8B-4C92-9CD2-248C0C69F56F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Domain", "Domain", "{B44FE9FB-1F0D-4663-BF94-1124BFEF125D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructure", "Infrastructure", "{B91FE29B-68FE-44FB-A27C-4A7749FC0BDC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mall.Utility", "Mall.Utility\Mall.Utility.csproj", "{8D1A6F75-4312-4EF2-8D95-B14E0B999A7F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Test", "Test", "{76BF882A-7DFA-4F17-9FB2-FF7720BF7A94}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mall.UtilityTests", "Mall.UtilityTests\Mall.UtilityTests.csproj", "{94AE30A8-99D0-49C6-851A-DF66C2EAE38F}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mall.Interface", "Mall.Interface\Mall.Interface.csproj", "{DF1F7A88-6829-416F-BE86-4A648C19AEBE}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -23,10 +31,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{C572E7BD-3C75-44D5-901C-FA0F8D6C0996}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{C572E7BD-3C75-44D5-901C-FA0F8D6C0996}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{C572E7BD-3C75-44D5-901C-FA0F8D6C0996}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{C572E7BD-3C75-44D5-901C-FA0F8D6C0996}.Release|Any CPU.Build.0 = Release|Any CPU
 		{D7BB6020-EEDB-498E-A24C-56178878E43E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{D7BB6020-EEDB-498E-A24C-56178878E43E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D7BB6020-EEDB-498E-A24C-56178878E43E}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -35,22 +39,32 @@ Global
 		{CE3053A3-CB12-4F10-BDD3-A0ADEE2CE9B5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CE3053A3-CB12-4F10-BDD3-A0ADEE2CE9B5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CE3053A3-CB12-4F10-BDD3-A0ADEE2CE9B5}.Release|Any CPU.Build.0 = Release|Any CPU
-		{CC6EF72F-6067-41F5-86B8-4F9955679971}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{CC6EF72F-6067-41F5-86B8-4F9955679971}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{CC6EF72F-6067-41F5-86B8-4F9955679971}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{CC6EF72F-6067-41F5-86B8-4F9955679971}.Release|Any CPU.Build.0 = Release|Any CPU
 		{52C7369F-4C8B-4C92-9CD2-248C0C69F56F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{52C7369F-4C8B-4C92-9CD2-248C0C69F56F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{52C7369F-4C8B-4C92-9CD2-248C0C69F56F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{52C7369F-4C8B-4C92-9CD2-248C0C69F56F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8D1A6F75-4312-4EF2-8D95-B14E0B999A7F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8D1A6F75-4312-4EF2-8D95-B14E0B999A7F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8D1A6F75-4312-4EF2-8D95-B14E0B999A7F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8D1A6F75-4312-4EF2-8D95-B14E0B999A7F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{94AE30A8-99D0-49C6-851A-DF66C2EAE38F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{94AE30A8-99D0-49C6-851A-DF66C2EAE38F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{94AE30A8-99D0-49C6-851A-DF66C2EAE38F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{94AE30A8-99D0-49C6-851A-DF66C2EAE38F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DF1F7A88-6829-416F-BE86-4A648C19AEBE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DF1F7A88-6829-416F-BE86-4A648C19AEBE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DF1F7A88-6829-416F-BE86-4A648C19AEBE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DF1F7A88-6829-416F-BE86-4A648C19AEBE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
-		{C572E7BD-3C75-44D5-901C-FA0F8D6C0996} = {DB45FA4F-F235-41E9-B74C-938E3ED8398C}
 		{D7BB6020-EEDB-498E-A24C-56178878E43E} = {8D95A941-625B-44BE-8826-EC487B583134}
+		{CE3053A3-CB12-4F10-BDD3-A0ADEE2CE9B5} = {B44FE9FB-1F0D-4663-BF94-1124BFEF125D}
 		{52C7369F-4C8B-4C92-9CD2-248C0C69F56F} = {DB45FA4F-F235-41E9-B74C-938E3ED8398C}
+		{94AE30A8-99D0-49C6-851A-DF66C2EAE38F} = {76BF882A-7DFA-4F17-9FB2-FF7720BF7A94}
+		{DF1F7A88-6829-416F-BE86-4A648C19AEBE} = {DB45FA4F-F235-41E9-B74C-938E3ED8398C}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {C0B81097-029B-4751-AA5F-0715D4E52373}
