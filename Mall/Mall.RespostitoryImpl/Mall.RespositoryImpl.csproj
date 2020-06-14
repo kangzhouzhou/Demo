@@ -5,8 +5,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Mall.Dto\Mall.Dto.csproj" />
-    <ProjectReference Include="..\Mall.Entity\Mall.Entity.csproj" />
+    <ProjectReference Include="..\Mall.PersistentData\Mall.Persistent.csproj" />
+    <ProjectReference Include="..\Mall.Repostitory\Mall.Repository.csproj" />
   </ItemGroup>
 
 </Project>

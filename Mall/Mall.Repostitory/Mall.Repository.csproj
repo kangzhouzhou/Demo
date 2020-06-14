@@ -1,12 +1,13 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Mall.Dto\Mall.Dto.csproj" />
+    <ProjectReference Include="..\Mall.AggregateRoot\Mall.AggregateRoot.csproj" />
     <ProjectReference Include="..\Mall.Entity\Mall.Entity.csproj" />
+    <ProjectReference Include="..\Mall.PersistentData\Mall.Persistent.csproj" />
   </ItemGroup>
 
 </Project>

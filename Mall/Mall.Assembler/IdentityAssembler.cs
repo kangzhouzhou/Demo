@@ -1,4 +1,7 @@
-﻿using System;
+﻿using Mall.Dto.Base;
+using Mall.IEntity;
+using Mall.IEntity.Structure;
+using System;
 
 namespace Mall.Assembler
 {
@@ -7,5 +10,14 @@ namespace Mall.Assembler
     /// </summary>
     public class IdentityAssembler
     {
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="customer"></param>
+        /// <returns></returns>
+        public ResponseBody<string> AssemblerResponseBody(Customer customer)
+        {
+            return null;
+        }
     }
 }

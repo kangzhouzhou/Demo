@@ -1,6 +1,5 @@
 ﻿using Mall.Dto.Base;
-using Mall.Dto.Bases;
-using Mall.Dto.Enum;
+using Mall.IEntity.Enums;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;

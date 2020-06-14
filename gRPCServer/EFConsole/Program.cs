@@ -30,17 +30,13 @@ namespace EFConsole
                 }
             };
             EFDemoContext context = host.Services.GetService<EFDemoContext>();
+            context.Database.EnsureDeleted();
             context.Database.Migrate();
 
 
             EntityEntry<User> ent = context.Set<User>().Add(user);
             context.SaveChanges();
-            User b = context.Set<User>().Find(3);
-            b.Name = "222";
-            b.Blogs[0].Url = "3333";
-            b.Blogs[0].Posts[0].Title = "222";
-            var sss = context.Set<Post>().Find(4);
-            context.Set<Post>().Remove(sss);
+            user.Name = "CCCC";
             context.SaveChanges();
             Console.ReadKey();
         }

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Text;
 
-namespace Mall.Dto.Enum
+namespace Mall.IEntity.Enums
 {
     /// <summary>
     /// 登录设备

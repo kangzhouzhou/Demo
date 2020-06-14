@@ -2,8 +2,12 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Mall.PersistentImpl;
+using Mall.Utility;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using NLog;
@@ -22,9 +26,9 @@ namespace Mall.Interface
 
         public static IHostBuilder CreateHostBuilder(string[] args) =>
             Host.CreateDefaultBuilder(args)
-                .ConfigureLogging(loggingBuilder => 
+                .ConfigureLogging(loggingBuilder =>
                 {
-                    //loggingBuilder.ClearProviders();
+                    loggingBuilder.ClearProviders();
                     //NLog
                     LoggingConfiguration logConfiguration = new LoggingConfiguration();
                     FileTarget fileTarget = new FileTarget() { FileName = "All.log" };
@@ -32,10 +36,13 @@ namespace Mall.Interface
                     fileTarget.ArchiveDateFormat = "yyyy-MM-dd";
                     logConfiguration.AddRule(NLog.LogLevel.Trace, NLog.LogLevel.Fatal, fileTarget);
                     loggingBuilder.AddNLog(logConfiguration);
+                }).
+                ConfigureServices((hostBuilderContext,servicesCollection) => {
+                    servicesCollection.AddPersistent(hostBuilderContext.Configuration.GetConnectionString("DbConnection"));
                 })
                 .ConfigureWebHostDefaults(webBuilder =>
                 {
-                    webBuilder.UseKestrel(kestrelServerOptions=> {
+                    webBuilder.UseKestrel(kestrelServerOptions => {
                         kestrelServerOptions.Listen(new System.Net.IPAddress(new byte[] { 127, 0, 0, 1 }), 5001, listenOptions =>
                              {
                                  listenOptions.Protocols = Microsoft.AspNetCore.Server.Kestrel.Core.HttpProtocols.Http2;
