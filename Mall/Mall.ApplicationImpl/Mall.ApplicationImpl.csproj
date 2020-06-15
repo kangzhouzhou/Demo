@@ -6,7 +6,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Mall.Application\Mall.Application.csproj" />
-    <ProjectReference Include="..\Mall.Repostitory\Mall.Repository.csproj" />
+    <ProjectReference Include="..\Mall.Assembler\Mall.Assembler.csproj" />
   </ItemGroup>
 
 </Project>

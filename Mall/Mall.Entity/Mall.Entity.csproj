@@ -2,6 +2,12 @@
 
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>
+    <RootNamespace>Mall.Entity</RootNamespace>
+    <AssemblyName>Mall.Entity</AssemblyName>
   </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Mall.AggregateRoot\Mall.Aggregate.csproj" />
+  </ItemGroup>
 
 </Project>

@@ -6,7 +6,7 @@ using System.Text;
 
 namespace Mall.Dto.Identity
 {
-    public class LoginPostBody : PostRequestBody
+    public class LoginPostBody
     {
         [JsonProperty("UserName")]
         public string Account { get; set; }

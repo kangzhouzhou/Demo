@@ -1,14 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Diagnostics.CodeAnalysis;
 using System.Text;
 
-namespace Mall.Dto.Base
+namespace Mall.Aggregate.Base
 {
     /// <summary>
-    /// 请求体基类
+    /// 值对象
     /// </summary>
-    public class RequestBody
+    public interface IValueObject<TKey> : IKey<TKey> where TKey : new()
     {
+
     }
 }

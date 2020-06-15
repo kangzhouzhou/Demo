@@ -1,27 +1,19 @@
-﻿using Mall.IEntity.Base;
-using Mall.IEntity.Enums;
-using System;
-using System.Collections.Generic;
-using System.Text;
+﻿
 
-namespace Mall.IEntity.Structure
+using Mall.Aggregate.Enums;
+
+namespace Mall.Entity.Structure
 {
-    public class ThirdPartyOrgMap :BaseEntity<ThirdPartyOrgMapKey>, IEntityVisible, IEntityEnable
+    public class ThirdPartyOrgMap : Base.BaseEntity
     {
+        public int Id { get; set; }
+
         /// <summary>
         /// 组织第三方映射
         /// </summary>
-        public string ThirdPartyOrgId
-        {
-            get { return Key.ThirdPartyOrgId; }
-            set { Key.ThirdPartyOrgId = value; }
-        }
+        public string ThirdPartyOrgId { get; set; }
 
-        public ThirdPartyApp ThirdPartyApp
-        {
-            get { return Key.ThirdPartyApp; }
-            set { Key.ThirdPartyApp = value; }
-        }
+        public ThirdPartyApp ThirdPartyApp { get; set; }
 
         /// <summary>
         /// 第三方组织名称
@@ -48,7 +40,5 @@ namespace Mall.IEntity.Structure
         public virtual Organization Organization { get; set; }
 
         public bool IsEnable { get; set; }
-
-        public bool IsVisible { get; set; }
     }
 }

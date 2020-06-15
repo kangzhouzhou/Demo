@@ -1,16 +1,15 @@
-﻿using Mall.IEntity.Base;
-using Mall.IEntity.Enums;
-using System;
+﻿using Mall.Entity.Base;
 using System.Collections.Generic;
-using System.Text;
 
-namespace Mall.IEntity.Structure
+namespace Mall.Entity.Structure
 {
     /// <summary>
     /// 用户实体
     /// </summary>
-    public class Customer : IntEntity, IEntityStatus, IEntityVisible, IEntityEnable
+    public class Customer : BaseEntity
     {
+        public int Id { get; set; }
+
         public string Name { get; set; }
 
         /// <summary>
@@ -35,8 +34,6 @@ namespace Mall.IEntity.Structure
 
         public virtual Organization Organization { get; set; }
 
-        public virtual List<DepartmentCustomerRelation> DepartmentCustomerRelationList { get; set; }
-
         /// <summary>
         /// 是否启用
         /// </summary>
@@ -47,14 +44,6 @@ namespace Mall.IEntity.Structure
         /// </summary>
         public bool IsVisible { get; set; }
 
-        public EntityStatus EntityStatus { get; set; }
-
-        public int Creater { get; set; }
-
-        public DateTime CreateTime { get; set; }
-
-        public int Deleter { get; set; }
-
-        public DateTime DeleteTime { get; set; }
+        public virtual List<DepartmentCustomerRelation> DepartmentCustomerRelationList { get; set; }
     }
 }

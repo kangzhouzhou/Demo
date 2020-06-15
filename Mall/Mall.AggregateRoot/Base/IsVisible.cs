@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Mall.IEntity.Base
+namespace Mall.Aggregate.Base
 {
-    public interface IEntityVisible
+    public interface IsVisible
     {
         /// <summary>
         /// 是否可见

@@ -5,13 +5,15 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="JWT" Version="7.2.1" />
-    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="3.1.5" />
-    <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="3.1.5" />
+    <Compile Remove="DI\**" />
+    <EmbeddedResource Remove="DI\**" />
+    <None Remove="DI\**" />
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="DI\" />
+    <PackageReference Include="JWT" Version="7.2.1" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="3.1.5" />
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="3.1.5" />
   </ItemGroup>
 
 </Project>

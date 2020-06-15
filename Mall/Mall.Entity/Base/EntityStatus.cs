@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Mall.IEntity.Enums
+namespace Mall.Entity.Base
 {
     public enum EntityStatus
     {

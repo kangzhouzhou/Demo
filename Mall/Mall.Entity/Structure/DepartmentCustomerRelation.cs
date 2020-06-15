@@ -1,31 +1,21 @@
-﻿using Mall.IEntity.Base;
-using Mall.IEntity.Enums;
-using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using Mall.Aggregate.Enums;
+using Mall.Entity.Base;
 
-namespace Mall.IEntity.Structure
+
+namespace Mall.Entity.Structure
 {
     /// <summary>
     /// 人员部门关系
     /// </summary>
-    public class DepartmentCustomerRelation : BaseEntity<DepartmentCustomerRelationKey>
+    public class DepartmentCustomerRelation : BaseEntity
     {
-        public int DepartmentId
-        {
-            get { return Key.DepartmentId; }
-            set { Key.DepartmentId = value; }
-        }
+        public int DepartmentId { get; set; }
 
-        public virtual Department Department { get; set; }
+        public Department Department { get; set; }
 
-        public int CustomerId
-        {
-            get { return Key.CustomerId; }
-            set { Key.CustomerId = value; }
-        }
+        public int CustomerId { get; set; }
 
-        public virtual Customer Customer { get; set; }
+        public Customer Customer { get; set; }
 
         public CustomerRole CustomerRole { get; set; }
     }

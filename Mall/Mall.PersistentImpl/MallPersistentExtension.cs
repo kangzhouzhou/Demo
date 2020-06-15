@@ -11,7 +11,7 @@ namespace Mall.PersistentImpl
     /// <summary>
     /// 扩展服务
     /// </summary>
-    public static class MallServiceCollection
+    public static class MallPersistentExtension 
     {
         /// <summary>
         /// 持久化数据

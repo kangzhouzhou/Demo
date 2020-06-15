@@ -1,5 +1,4 @@
-﻿using Mall.IEntity.Base;
-using Mall.Persistent;
+﻿using Mall.Persistent;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;

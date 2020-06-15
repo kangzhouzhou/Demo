@@ -1,18 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations.Schema;
 using System.Text;
 
-namespace Mall.IEntity.Base
+namespace Mall.Entity.Base
 {
-    public abstract class BaseEntity<T> where T:new()
+    public abstract class BaseEntity : IEntityStatus
     {
-        public BaseEntity()
-        {
-            Key = new T();
-        }
+        public EntityStatus EntityStatus { get; set; }
 
-        [NotMapped]
-        public T Key { get; set; }
+        public DateTime CreateTime { get; set; }
+
+        public DateTime DeleteTime { get; set; }
     }
 }

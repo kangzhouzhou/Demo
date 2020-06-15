@@ -5,12 +5,10 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace Mall.Entity.Structure
+namespace Mall.Aggregate.Structure.Entity
 {
-    public class Organization : Base.BaseEntity
+    public class OrganizationEntity : IntEntity, IsEnable
     {
-        public int Id { get; set; }
-
         /// <summary>
         /// 组织名称
         /// </summary>
@@ -25,11 +23,5 @@ namespace Mall.Entity.Structure
         /// 是否启用
         /// </summary>
         public bool IsEnable { get; set; }
-
-        public List<Customer> CustomerList { get; set; }
-
-        public List<Department> DepartmentList { get; set; }
-
-        public List<ThirdPartyOrgMap> ThirdPartyOrgMapList { get; set; }
     }
 }

@@ -1,9 +1,9 @@
-﻿using Mall.IEntity.Enums;
+﻿using Mall.Aggregate.Enums;
 using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace Mall.IEntity.Structure
+namespace Mall.Aggregate.Structure.ValueObject
 {
     public class ThirdPartyOrgMapKey
     {

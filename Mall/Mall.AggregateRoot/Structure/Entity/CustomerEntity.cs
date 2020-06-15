@@ -1,29 +1,32 @@
 ﻿using Mall.Aggregate.Base;
 using Mall.Aggregate.Structure.ValueObject;
-using Mall.Entity.Base;
 using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace Mall.Entity.Structure
+namespace Mall.Aggregate.Structure.Entity
 {
-    public class Department: BaseEntity
+    /// <summary>
+    /// 用户实体
+    /// </summary>
+    public class CustomerEntity : IntEntity, IsEnable, IsVisible
     {
-        public int Id { get; set; }
-
         public string Name { get; set; }
 
         /// <summary>
-        /// 上级部门，0表示顶级部门
+        /// 账号
         /// </summary>
-        public int PartenDepartmentId { get; set; }
+        public string Account { get; set; }
 
         /// <summary>
-        /// 组织Id
+        /// 密码
         /// </summary>
-        public  int OrganizationId { get; set; }
+        public string Password { get; set; }
 
-        public virtual Organization Organization { get; set; }
+        /// <summary>
+        /// 是否为管理员
+        /// </summary>
+        public bool IsAdministrator { get; set; }
 
         /// <summary>
         /// 是否启用
@@ -34,7 +37,5 @@ namespace Mall.Entity.Structure
         /// 是否可见
         /// </summary>
         public bool IsVisible { get; set; }
-
-        public virtual List<DepartmentCustomerRelation>  DepartmentCustomerRelationList { get; set; }
     }
 }

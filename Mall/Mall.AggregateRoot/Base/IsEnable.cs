@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Mall.IEntity.Base
+namespace Mall.Aggregate.Base
 {
-    public interface IEntityEnable
+    public interface IsEnable
     {
         /// <summary>
         /// 是否启用

@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Mall.Dto.Identity
 {
-    public class VerifyCodeGetBody : RequestBody
+    public class VerifyCodeGetBody
     {
         public string Phone { get; set; }
     }

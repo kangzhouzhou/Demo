@@ -27,10 +27,11 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Mall.Application\Mall.Application.csproj" />
     <ProjectReference Include="..\Mall.Dto\Mall.Dto.csproj" />
     <ProjectReference Include="..\Mall.PersistentData\Mall.Persistent.csproj" />
+    <ProjectReference Include="..\Mall.PersistentImpl\Mall.PersistentImpl.csproj" />
     <ProjectReference Include="..\Mall.Utility\Mall.Utility.csproj" />
-    <ProjectReference Include="..\Mall\Mall.PersistentImpl.csproj" />
   </ItemGroup>
 
 

@@ -4,9 +4,9 @@ using System.Text;
 
 namespace Mall.Aggregate.Base
 {
-    public abstract class Entity<TKey> : IEntity<TKey> where TKey : new()
+    public abstract class AggregateRoot<TKey>:IAggregateRoot<TKey> where TKey:new()
     {
-        public Entity()
+        public AggregateRoot()
         {
             KeyValue = new TKey();
         }

@@ -5,7 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace Mall.Utility
+namespace Mall.Utility.Token
 {
     public class  JWTUtility
     {

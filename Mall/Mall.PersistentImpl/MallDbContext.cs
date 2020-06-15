@@ -1,10 +1,12 @@
-﻿using Mall.IEntity.Structure;
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using System;
 using System.Collections.Generic;
 using System.Text;
-using Mall.IEntity.Enums;
+using Mall.Aggregate.Structure.Entity;
+using Mall.Entity.Structure;
+using Mall.Entity.Base;
+using Mall.Aggregate.Enums;
 
 namespace Mall.PersistentImpl
 {
@@ -19,6 +21,7 @@ namespace Mall.PersistentImpl
         {
             base.OnModelCreating(modelBuilder);
             EntityTypeBuilder<Organization> organizationBuilder = modelBuilder.Entity<Organization>();
+            organizationBuilder.ToTable("Organization");
             organizationBuilder.HasKey(x => x.Id);
             organizationBuilder.HasQueryFilter(x => x.EntityStatus != EntityStatus.Deleted);
             organizationBuilder.Property(x => x.EntityStatus).HasDefaultValue(EntityStatus.Normal);

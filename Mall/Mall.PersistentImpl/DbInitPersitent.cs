@@ -1,4 +1,4 @@
-﻿using Mall.IEntity.Structure;
+﻿using Mall.Entity.Structure;
 using Mall.Persistent;
 using Mall.Utility.Encryption;
 using Microsoft.EntityFrameworkCore;

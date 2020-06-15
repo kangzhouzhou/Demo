@@ -1,5 +1,4 @@
-﻿using Mall.Dto.Base;
-using Mall.IEntity.Enums;
+﻿using Mall.Aggregate.Enums;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -7,7 +6,7 @@ using System.Text;
 
 namespace Mall.Dto.Identity
 {
-    public class ThirdPartyPostBody : PostRequestBody
+    public class ThirdPartyPostBody
     {
         public ClientType State { get; set; }
 

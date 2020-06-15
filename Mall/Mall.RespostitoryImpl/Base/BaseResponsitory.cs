@@ -15,11 +15,6 @@ namespace MMall.RespositoryImpl.Base
     {
         protected IPersistent<T> _persistent;
 
-        public Responsitory(IPersistent<T> persistent)
-        {
-            _persistent = persistent;
-        }
-
         public T Get(object key)
         {
             return _persistent.Get(key);

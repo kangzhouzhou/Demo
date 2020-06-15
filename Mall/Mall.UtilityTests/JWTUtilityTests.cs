@@ -3,6 +3,7 @@ using Mall.Utility;
 using System;
 using System.Collections.Generic;
 using System.Text;
+using Mall.Utility.Token;
 
 namespace Mall.Utility.Tests
 {

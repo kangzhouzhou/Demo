@@ -1,14 +1,10 @@
-﻿using Mall.Dto.Base;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Text;
 
 namespace Mall.Dto.Base
 {
-    /// <summary>
-    /// POST请求体基类:Noce和Timesstamp请求排重
-    /// </summary>
-    public class PostRequestBody : RequestBody
+    public class GetRequestBody
     {
         /// <summary>
         /// 随机数

@@ -1,16 +1,13 @@
 ﻿using Mall.Aggregate.Base;
 using Mall.Aggregate.Structure.ValueObject;
-using Mall.Entity.Base;
 using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace Mall.Entity.Structure
+namespace Mall.Aggregate.Structure.Entity
 {
-    public class Department: BaseEntity
+    public class DepartmentEntity : IntEntity, IsVisible, IsEnable
     {
-        public int Id { get; set; }
-
         public string Name { get; set; }
 
         /// <summary>
@@ -21,9 +18,7 @@ namespace Mall.Entity.Structure
         /// <summary>
         /// 组织Id
         /// </summary>
-        public  int OrganizationId { get; set; }
-
-        public virtual Organization Organization { get; set; }
+        public int OrganizationId { get; set; }
 
         /// <summary>
         /// 是否启用
@@ -35,6 +30,6 @@ namespace Mall.Entity.Structure
         /// </summary>
         public bool IsVisible { get; set; }
 
-        public virtual List<DepartmentCustomerRelation>  DepartmentCustomerRelationList { get; set; }
+        public List<DepartmentCustomerRelationEntity>  DepartmentCustomerRelationList { get; set; }
     }
 }

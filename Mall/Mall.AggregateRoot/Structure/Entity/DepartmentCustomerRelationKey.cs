@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Mall.IEntity.Structure
+namespace Mall.Aggregate.Structure.ValueObject
 {
     public class DepartmentCustomerRelationKey
     {
