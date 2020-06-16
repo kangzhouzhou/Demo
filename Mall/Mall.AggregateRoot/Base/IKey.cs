@@ -10,6 +10,6 @@ namespace Mall.Aggregate.Base
     /// <typeparam name="TKey"></typeparam>
     public interface IKey<TKey> where TKey : new()
     {
-        TKey KeyValue { get; set; }
+       TKey KeyValue { get; set; }
     }
 }

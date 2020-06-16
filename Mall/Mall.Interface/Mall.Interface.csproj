@@ -27,10 +27,12 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Mall.ApplicationImpl\Mall.ApplicationImpl.csproj" />
     <ProjectReference Include="..\Mall.Application\Mall.Application.csproj" />
     <ProjectReference Include="..\Mall.Dto\Mall.Dto.csproj" />
     <ProjectReference Include="..\Mall.PersistentData\Mall.Persistent.csproj" />
     <ProjectReference Include="..\Mall.PersistentImpl\Mall.PersistentImpl.csproj" />
+    <ProjectReference Include="..\Mall.RespostitoryImpl\Mall.RespositoryImpl.csproj" />
     <ProjectReference Include="..\Mall.Utility\Mall.Utility.csproj" />
   </ItemGroup>
 

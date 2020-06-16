@@ -37,5 +37,10 @@ namespace Mall.Aggregate.Structure.Aggregate
         /// 第三方映射
         /// </summary>
         public List<ThirdPartyOrgMapEntity> ThirdPartyOrgMapList { get; set; }
+
+        public void Add(CustomerEntity customer)
+        { 
+            
+        }
     }
 }

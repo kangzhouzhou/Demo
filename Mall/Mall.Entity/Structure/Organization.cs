@@ -26,10 +26,10 @@ namespace Mall.Entity.Structure
         /// </summary>
         public bool IsEnable { get; set; }
 
-        public List<Customer> CustomerList { get; set; }
+        public virtual List<Customer> CustomerList { get; set; }
 
-        public List<Department> DepartmentList { get; set; }
+        public virtual List<Department> DepartmentList { get; set; }
 
-        public List<ThirdPartyOrgMap> ThirdPartyOrgMapList { get; set; }
+        public virtual List<ThirdPartyOrgMap> ThirdPartyOrgMapList { get; set; }
     }
 }

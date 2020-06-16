@@ -2,6 +2,7 @@
 using Mall.Dto.Identity;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics.CodeAnalysis;
 using System.Text;
 
 namespace Mall.Application
@@ -16,13 +17,13 @@ namespace Mall.Application
         /// </summary>
         /// <param name="requestBody"></param>
         /// <returns></returns>
-        ResponseBody<string> Login(LoginPostBody requestBody);
+        ResponseBody<string> Login([NotNull]LoginPostBody requestBody);
 
         /// <summary>
         /// 第三方授权
         /// </summary>
         /// <param name="requestBody"></param>
         /// <returns></returns>
-        ResponseBody<string> ThirdParty(ThirdPartyPostBody requestBody);
+        ResponseBody<string> ThirdParty([NotNull]ThirdPartyPostBody requestBody);
     }
 }

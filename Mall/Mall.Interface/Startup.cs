@@ -28,7 +28,7 @@ namespace Mall.Interface
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddScoped<LogFilterAttribute>();
-            services.AddScoped<ModelStateFilterAttribute>(); 
+            services.AddScoped<ModelStateFilterAttribute>();
             services.AddScoped<TTFBFilterAttribute>();
 
             var mvcBuilder = services.AddControllers(mvcOptions =>
@@ -36,15 +36,21 @@ namespace Mall.Interface
                 mvcOptions.Filters.Add<LogFilterAttribute>();
                 mvcOptions.Filters.Add<ModelStateFilterAttribute>();
                 mvcOptions.Filters.Add<TTFBFilterAttribute>();
+
             });
 
             //ÆôÓÃNewtonsoftJson
             mvcBuilder.AddNewtonsoftJson();
 
-            services.AddSwaggerGen(swaggerGenOptions =>
+            mvcBuilder.ConfigureApiBehaviorOptions(apiBehaviorOptions =>
             {
-                swaggerGenOptions.SwaggerDoc("v1", new OpenApiInfo { Title = "Mall API", Version = "v1" });
+                apiBehaviorOptions.SuppressModelStateInvalidFilter = false;
             });
+
+            services.AddSwaggerGen(swaggerGenOptions =>
+        {
+            swaggerGenOptions.SwaggerDoc("v1", new OpenApiInfo { Title = "Mall API", Version = "v1" });
+        });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

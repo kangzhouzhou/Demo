@@ -11,6 +11,11 @@ namespace Mall.Aggregate.Base
             KeyValue = new TKey();
         }
 
+        public AggregateRoot(TKey keyValue)
+        {
+            KeyValue = keyValue;
+        }
+
         public TKey KeyValue { get; set; }
     }
 }

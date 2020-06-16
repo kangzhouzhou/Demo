@@ -11,13 +11,13 @@ using System.Text;
 
 namespace Mall.Repostitory.Structure
 {
-    public class CustomerResponsitorpy: Responsitory<OrganizationAggregate>, IOrganizationsponsitory
+    public class CustomerResponsitorpy : Responsitory<CustomerAggregate>, ICustomerResponsitory
     {
-        public CustomerResponsitorpy(IPersistent<Customer> persistent)
+        public CustomerResponsitorpy(IPersistent<Customer> customerPersistent, IPersistent<Department> departmentPersistent, IPersistent<Organization> organizationPersistent)
         {
         }
 
-        public CustomerEntity GetByAccount(string account)
+        public CustomerAggregate GetByAccount(string account)
         {
             throw new NotImplementedException();
         }

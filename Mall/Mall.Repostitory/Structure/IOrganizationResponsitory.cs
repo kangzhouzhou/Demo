@@ -7,8 +7,8 @@ using System.Text;
 
 namespace Mall.Repository.Structure
 {
-    public interface IOrganizationsponsitory : IResponsitory<OrganizationAggregate>
+    public interface IOrganizationResponsitory : IResponsitory<OrganizationAggregate>
     {
-        CustomerEntity GetByAccount(string account);
+
     }
 }

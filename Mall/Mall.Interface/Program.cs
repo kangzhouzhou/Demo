@@ -2,7 +2,9 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Mall.ApplicationImpl;
 using Mall.PersistentImpl;
+using Mall.RespositoryImpl;
 using Mall.Utility;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.EntityFrameworkCore;
@@ -28,7 +30,7 @@ namespace Mall.Interface
             Host.CreateDefaultBuilder(args)
                 .ConfigureLogging(loggingBuilder =>
                 {
-                    loggingBuilder.ClearProviders();
+                    //loggingBuilder.ClearProviders();
                     //NLog
                     LoggingConfiguration logConfiguration = new LoggingConfiguration();
                     FileTarget fileTarget = new FileTarget() { FileName = "All.log" };
@@ -38,7 +40,12 @@ namespace Mall.Interface
                     loggingBuilder.AddNLog(logConfiguration);
                 }).
                 ConfigureServices((hostBuilderContext,servicesCollection) => {
+                    //³Ö¾Ã»¯
                     servicesCollection.AddPersistent(hostBuilderContext.Configuration.GetConnectionString("DbConnection"));
+
+                    servicesCollection.AddRespositoryt();
+
+                    servicesCollection.AddApplication();
                 })
                 .ConfigureWebHostDefaults(webBuilder =>
                 {
