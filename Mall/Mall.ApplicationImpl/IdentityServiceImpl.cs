@@ -1,5 +1,6 @@
 ﻿using Mall.Aggregate.Structure.Aggregate;
 using Mall.Aggregate.Structure.Entity;
+using Mall.AppConfig;
 using Mall.Application;
 using Mall.Assembler;
 using Mall.Dto.Base;
@@ -14,19 +15,22 @@ namespace Mall.ApplicationImpl
 {
     public class IdentityServiceImpl : IdentityService
     {
-        public IdentityServiceImpl(IdentityAssembler assmbler, ICustomerResponsitory  customerResponsitory ,ILogger<IdentityServiceImpl> logging)
+        public IdentityServiceImpl(IdentityAssembler assmbler, ICustomerResponsitory customerResponsitory, ILogger<IdentityServiceImpl> logging, AppConfiguration configuration)
         {
             _assmbler = assmbler;
             _customerResponsitory = customerResponsitory;
              _logger = logging;
+            _configuration = configuration;
         }
 
         private readonly IdentityAssembler _assmbler;
 
         private readonly ICustomerResponsitory _customerResponsitory;
 
-
         private readonly ILogger<IdentityServiceImpl> _logger;
+
+        private readonly AppConfiguration _configuration;
+
 
         public ResponseBody<string> Login(LoginPostBody requestBody)
         {
@@ -42,10 +46,11 @@ namespace Mall.ApplicationImpl
             {
                 responseBody.Err = "账号已被禁用";
             }
+
             CustomerDto customer = new CustomerDto();
             customer.ClientType = Aggregate.Enums.ClientType.Account;
             customer.CustomerId = customerAggregate.Id;
-            responseBody.Data = JWTUtility.JwtEncode(customer,null);
+            responseBody.Data = JWTUtility.JwtEncode(customer, _configuration.JwtSecret);
             return null;
 
         }

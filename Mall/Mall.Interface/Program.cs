@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Mall.AppConfig;
 using Mall.ApplicationImpl;
 using Mall.PersistentImpl;
 using Mall.RespositoryImpl;
@@ -40,6 +41,8 @@ namespace Mall.Interface
                     loggingBuilder.AddNLog(logConfiguration);
                 }).
                 ConfigureServices((hostBuilderContext,servicesCollection) => {
+
+                    servicesCollection.AddAppConfiguration();
                     //³Ö¾Ã»¯
                     servicesCollection.AddPersistent(hostBuilderContext.Configuration.GetConnectionString("DbConnection"));
 

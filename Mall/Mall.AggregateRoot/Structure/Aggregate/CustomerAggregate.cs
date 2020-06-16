@@ -7,7 +7,17 @@ using System.Text;
 namespace Mall.Aggregate.Structure.Aggregate
 {
     public class CustomerAggregate : AggregateRoot<CustomerEntity>
-    { 
+    {
+        public CustomerAggregate()
+        { 
+        
+        }
+
+        public CustomerAggregate(CustomerEntity customerEntity, OrganizationEntity organizationEntity,List<DepartmentEntity> departmentEntitieList)
+        { 
+            
+        }
+
         public int Id { get; set; }
 
         public string Name { get; set; }
@@ -21,7 +31,7 @@ namespace Mall.Aggregate.Structure.Aggregate
         /// 密码
         /// </summary>
         public string Password { get; set; }
-        
+
         /// <summary>
         /// 是否为管理员
         /// </summary>
@@ -37,11 +47,15 @@ namespace Mall.Aggregate.Structure.Aggregate
         /// </summary>
         public bool IsVisible { get; set; }
 
+        public List<DepartmentEntity> DepartmentList { get; private set; }
+
         public int OrganizationId { get; private set; }
 
         /// <summary>
         /// 组织名称
         /// </summary>
         public string OrganizationName { get; private set; }
+
+        public bool OrganizationIsEnable { get; private set; }
     }
 }

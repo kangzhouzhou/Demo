@@ -5,6 +5,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Mall.AppConfigurationImpl\Mall.AppConfig.csproj" />
     <ProjectReference Include="..\Mall.Application\Mall.Application.csproj" />
     <ProjectReference Include="..\Mall.Assembler\Mall.Assembler.csproj" />
     <ProjectReference Include="..\Mall.Repostitory\Mall.Repository.csproj" />

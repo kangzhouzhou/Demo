@@ -27,6 +27,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Mall.AppConfigurationImpl\Mall.AppConfig.csproj" />
     <ProjectReference Include="..\Mall.ApplicationImpl\Mall.ApplicationImpl.csproj" />
     <ProjectReference Include="..\Mall.Application\Mall.Application.csproj" />
     <ProjectReference Include="..\Mall.Dto\Mall.Dto.csproj" />

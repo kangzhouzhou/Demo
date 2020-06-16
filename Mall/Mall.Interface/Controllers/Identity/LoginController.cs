@@ -16,7 +16,7 @@ namespace Mall.Interface.Controllers.Identity
     [Route("Api/Identity/Login")]
     public class LoginController : ApiBaseController<LoginController>
     {
-        public LoginController(IdentityService identityService, ILogger<LoginController> logger, IConfiguration cc)
+        public LoginController(IdentityService identityService, ILogger<LoginController> logger)
             :base(logger)
         {
             _identityService = identityService;
