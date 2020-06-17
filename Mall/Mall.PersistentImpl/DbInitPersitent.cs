@@ -37,7 +37,7 @@ namespace Mall.PersistentImpl
                     Customer customer = new Customer();
                     customer.Name = "root";
                     customer.Account = "root";
-                    customer.Password = MD5Utility.Encrypt32LowerCase(MD5Utility.Encrypt32LowerCase("root"));
+                    customer.Password = MD5Utility.Encrypt32UpCase(MD5Utility.Encrypt32UpCase("root"));
                     organization.CustomerList = new List<Customer>();
                     organization.CustomerList.Add(customer);
 

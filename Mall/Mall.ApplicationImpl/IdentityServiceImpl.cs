@@ -37,7 +37,7 @@ namespace Mall.ApplicationImpl
         {
             ResponseBody<string> responseBody = new ResponseBody<string>();
             CustomerAggregate customerAggregate = _customerResponsitory.GetByAccount(requestBody.Account);
-            if (customerAggregate == null || !customerAggregate.IsVisible || customerAggregate.Password != MD5Utility.Encrypt32LowerCase(requestBody.Password))
+            if (customerAggregate == null || !customerAggregate.IsVisible || customerAggregate.Password != MD5Utility.Encrypt32UpCase(requestBody.Password))
             {
                 responseBody.Err = "账号或密码错误";
                 return responseBody;

@@ -52,6 +52,8 @@ namespace Mall.Interface
                 })
                 .ConfigureWebHostDefaults(webBuilder =>
                 {
+                    /*
+                    //采用Kestrel
                     webBuilder.UseKestrel(kestrelServerOptions => {
                         kestrelServerOptions.Listen(new System.Net.IPAddress(new byte[] { 127, 0, 0, 1 }), 5001, listenOptions =>
                              {
@@ -60,9 +62,14 @@ namespace Mall.Interface
                              });
                         kestrelServerOptions.Listen(new System.Net.IPAddress(new byte[] { 127, 0, 0, 1 }), 5000, listenOptions =>
                         {
-                            listenOptions.Protocols = Microsoft.AspNetCore.Server.Kestrel.Core.HttpProtocols.Http2;
+                            listenOptions.Protocols = Microsoft.AspNetCore.Server.Kestrel.Core.HttpProtocols.Http1AndHttp2;
                         });
                     });
+                    */
+                    //采用IIS进程外
+                    webBuilder.UseIISIntegration();
+                    //采用IIS进程内
+                    //webBuilder.UseIIS();
                     webBuilder.UseStartup<Startup>();
                 });
     }

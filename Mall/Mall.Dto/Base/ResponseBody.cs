@@ -19,10 +19,35 @@ namespace Mall.Dto.Base
         /// </summary>
         public string Timestamp { get; set; }
 
-        public bool Success { get; set; }
+        private string _err;
+        /// <summary>
+        /// 错误信息,会自动将ErrProcess设置为ErrProcess.InfoTips
+        /// </summary>
+        public string Err
+        {
+            get { return _err; }
+            set
+            {
+                if (ErrProcess == ErrProcess.Ignore)
+                    ErrProcess = ErrProcess.InfoTips;
+                _err = value;
+            }
+        }
 
-        public string Err { get; set; }
+        /// <summary>
+        /// 操作是否成功
+        /// </summary>
+        public bool Success
+        {
+            get
+            {
+                return string.IsNullOrEmpty(Err) ? true : false;
+            }
+        }
 
+        /// <summary>
+        /// 错误处理0,忽略错误，1进行错误提示，2跳转登录页
+        /// </summary>
         public ErrProcess ErrProcess { get; set; }
     }
 

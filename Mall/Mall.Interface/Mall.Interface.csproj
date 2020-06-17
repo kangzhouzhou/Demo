@@ -5,7 +5,9 @@
     <RootNamespace>Mall.Interface</RootNamespace>
     <AssemblyName>Mall.Interface</AssemblyName>
   </PropertyGroup>
-
+  <PropertyGroup>
+    <AspNetCoreHostingModel>OutOfProcess</AspNetCoreHostingModel>
+  </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
     <DocumentationFile></DocumentationFile>
   </PropertyGroup>

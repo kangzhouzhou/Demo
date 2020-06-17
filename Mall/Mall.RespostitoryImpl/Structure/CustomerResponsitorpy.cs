@@ -45,7 +45,7 @@ namespace Mall.Repostitory.Structure
                     _logger.LogWarning($"Customer{customer.Id}所在Department为空");
                     return null;
                 }
-                CustomerEntity customerEntity=customer.RobotMap<Customer, CustomerEntity>();
+                CustomerEntity customerEntity = customer.RobotMap<Customer, CustomerEntity>();
                 OrganizationEntity organizationEntity = organization.RobotMap<Organization, OrganizationEntity>();
                 List<DepartmentEntity> departmentEntityList = department.RobotMap<Department, DepartmentEntity>();
                 return new CustomerAggregate(customerEntity, organizationEntity, departmentEntityList);
