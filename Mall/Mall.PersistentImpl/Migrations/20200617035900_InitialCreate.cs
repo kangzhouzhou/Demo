@@ -13,15 +13,12 @@ namespace Mall.PersistentImpl.Migrations
                 {
                     Id = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
+                    EntityStatus = table.Column<int>(nullable: false, defaultValue: 1),
+                    CreateTime = table.Column<DateTime>(nullable: false, defaultValue: new DateTime(2020, 6, 17, 11, 59, 0, 299, DateTimeKind.Local).AddTicks(8144)),
+                    DeleteTime = table.Column<DateTime>(nullable: false),
                     Name = table.Column<string>(nullable: true),
                     ParentOrganizationId = table.Column<int>(nullable: false),
-                    IsEnable = table.Column<bool>(nullable: false),
-                    IsVisible = table.Column<bool>(nullable: false),
-                    EntityStatus = table.Column<int>(nullable: false, defaultValue: 1),
-                    Creater = table.Column<int>(nullable: false),
-                    CreateTime = table.Column<DateTime>(nullable: false, defaultValue: new DateTime(2020, 6, 14, 11, 36, 17, 128, DateTimeKind.Local).AddTicks(6276)),
-                    Deleter = table.Column<int>(nullable: false),
-                    DeleteTime = table.Column<DateTime>(nullable: false)
+                    IsEnable = table.Column<bool>(nullable: false, defaultValue: true)
                 },
                 constraints: table =>
                 {
@@ -34,18 +31,16 @@ namespace Mall.PersistentImpl.Migrations
                 {
                     Id = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
+                    EntityStatus = table.Column<int>(nullable: false, defaultValue: 1),
+                    CreateTime = table.Column<DateTime>(nullable: false, defaultValue: new DateTime(2020, 6, 17, 11, 59, 0, 307, DateTimeKind.Local).AddTicks(3971)),
+                    DeleteTime = table.Column<DateTime>(nullable: false),
                     Name = table.Column<string>(nullable: true),
                     Account = table.Column<string>(nullable: true),
                     Password = table.Column<string>(nullable: true),
                     IsAdministrator = table.Column<bool>(nullable: false),
                     OrganizationId = table.Column<int>(nullable: false),
-                    IsEnable = table.Column<bool>(nullable: false),
-                    IsVisible = table.Column<bool>(nullable: false),
-                    EntityStatus = table.Column<int>(nullable: false, defaultValue: 1),
-                    Creater = table.Column<int>(nullable: false),
-                    CreateTime = table.Column<DateTime>(nullable: false, defaultValue: new DateTime(2020, 6, 14, 11, 36, 17, 148, DateTimeKind.Local).AddTicks(2158)),
-                    Deleter = table.Column<int>(nullable: false),
-                    DeleteTime = table.Column<DateTime>(nullable: false)
+                    IsEnable = table.Column<bool>(nullable: false, defaultValue: true),
+                    IsVisible = table.Column<bool>(nullable: false, defaultValue: true)
                 },
                 constraints: table =>
                 {
@@ -64,16 +59,14 @@ namespace Mall.PersistentImpl.Migrations
                 {
                     Id = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
+                    EntityStatus = table.Column<int>(nullable: false, defaultValue: 1),
+                    CreateTime = table.Column<DateTime>(nullable: false, defaultValue: new DateTime(2020, 6, 17, 11, 59, 0, 306, DateTimeKind.Local).AddTicks(9802)),
+                    DeleteTime = table.Column<DateTime>(nullable: false),
                     Name = table.Column<string>(nullable: true),
                     PartenDepartmentId = table.Column<int>(nullable: false),
                     OrganizationId = table.Column<int>(nullable: false),
-                    IsEnable = table.Column<bool>(nullable: false),
-                    IsVisible = table.Column<bool>(nullable: false),
-                    EntityStatus = table.Column<int>(nullable: false, defaultValue: 1),
-                    Creater = table.Column<int>(nullable: false),
-                    CreateTime = table.Column<DateTime>(nullable: false, defaultValue: new DateTime(2020, 6, 14, 11, 36, 17, 145, DateTimeKind.Local).AddTicks(1580)),
-                    Deleter = table.Column<int>(nullable: false),
-                    DeleteTime = table.Column<DateTime>(nullable: false)
+                    IsEnable = table.Column<bool>(nullable: false, defaultValue: true),
+                    IsVisible = table.Column<bool>(nullable: false, defaultValue: true)
                 },
                 constraints: table =>
                 {
@@ -92,13 +85,16 @@ namespace Mall.PersistentImpl.Migrations
                 {
                     ThirdPartyOrgId = table.Column<string>(nullable: false),
                     ThirdPartyApp = table.Column<int>(nullable: false),
+                    EntityStatus = table.Column<int>(nullable: false, defaultValue: 1),
+                    CreateTime = table.Column<DateTime>(nullable: false, defaultValue: new DateTime(2020, 6, 17, 11, 59, 0, 322, DateTimeKind.Local).AddTicks(2270)),
+                    DeleteTime = table.Column<DateTime>(nullable: false),
+                    Id = table.Column<int>(nullable: false),
                     ThirdPartyOrgName = table.Column<string>(nullable: true),
                     ThirdPartyAppId = table.Column<string>(nullable: true),
                     ThirdPartyAppName = table.Column<string>(nullable: true),
                     PermanentCode = table.Column<string>(nullable: true),
                     OrganizationId = table.Column<int>(nullable: false),
-                    IsEnable = table.Column<bool>(nullable: false),
-                    IsVisible = table.Column<bool>(nullable: false)
+                    IsEnable = table.Column<bool>(nullable: false)
                 },
                 constraints: table =>
                 {
@@ -117,6 +113,9 @@ namespace Mall.PersistentImpl.Migrations
                 {
                     DepartmentId = table.Column<int>(nullable: false),
                     CustomerId = table.Column<int>(nullable: false),
+                    EntityStatus = table.Column<int>(nullable: false, defaultValue: 1),
+                    CreateTime = table.Column<DateTime>(nullable: false, defaultValue: new DateTime(2020, 6, 17, 11, 59, 0, 319, DateTimeKind.Local).AddTicks(9114)),
+                    DeleteTime = table.Column<DateTime>(nullable: false),
                     CustomerRole = table.Column<int>(nullable: false, defaultValue: 1)
                 },
                 constraints: table =>
@@ -135,6 +134,13 @@ namespace Mall.PersistentImpl.Migrations
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Restrict);
                 });
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Customer_Account",
+                table: "Customer",
+                column: "Account",
+                unique: true,
+                filter: "[Account] IS NOT NULL");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Customer_OrganizationId",

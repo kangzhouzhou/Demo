@@ -25,6 +25,8 @@ namespace Mall.PersistentImpl
                 contextOptionsBuilder.UseSqlServer(connectionStr, sqlServerOptions => {
                     sqlServerOptions.MigrationsAssembly(Assembly.GetExecutingAssembly().FullName);
                 });
+                //启用延迟加载
+                contextOptionsBuilder.UseLazyLoadingProxies();
             });
             InitPersitent initPersitent = servicesCollection.BuildServiceProvider().GetRequiredService<InitPersitent>();
             initPersitent.Init();

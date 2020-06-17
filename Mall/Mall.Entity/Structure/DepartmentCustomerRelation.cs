@@ -11,11 +11,11 @@ namespace Mall.Entity.Structure
     {
         public int DepartmentId { get; set; }
 
-        public Department Department { get; set; }
+        public virtual Department Department { get; set; }
 
         public int CustomerId { get; set; }
 
-        public Customer Customer { get; set; }
+        public virtual Customer Customer { get; set; }
 
         public CustomerRole CustomerRole { get; set; }
     }

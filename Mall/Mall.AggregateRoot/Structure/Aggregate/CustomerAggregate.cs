@@ -1,5 +1,6 @@
 ﻿using Mall.Aggregate.Base;
 using Mall.Aggregate.Structure.Entity;
+using RobotMapper;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -13,9 +14,21 @@ namespace Mall.Aggregate.Structure.Aggregate
         
         }
 
-        public CustomerAggregate(CustomerEntity customerEntity, OrganizationEntity organizationEntity,List<DepartmentEntity> departmentEntitieList)
-        { 
-            
+        public CustomerAggregate(CustomerEntity customerEntity, OrganizationEntity organizationEntity, List<DepartmentEntity> departmentEntitieList)
+        {
+            KeyValue = customerEntity;
+            Id = customerEntity.Id;
+            Name = customerEntity.Name;
+            Account = customerEntity.Account;
+            Password = customerEntity.Password;
+            IsAdministrator = customerEntity.IsAdministrator;
+            IsEnable = customerEntity.IsEnable;
+            IsVisible = customerEntity.IsVisible;
+            DepartmentList = departmentEntitieList;
+            OrganizationId = customerEntity.OrganizationId;
+            Organization = organizationEntity;
+            OrganizationName = organizationEntity.Name;
+            OrganizationIsEnable = organizationEntity.IsEnable;
         }
 
         public int Id { get; set; }
@@ -48,6 +61,8 @@ namespace Mall.Aggregate.Structure.Aggregate
         public bool IsVisible { get; set; }
 
         public List<DepartmentEntity> DepartmentList { get; private set; }
+
+        public OrganizationEntity Organization { get; private set; }
 
         public int OrganizationId { get; private set; }
 

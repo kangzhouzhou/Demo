@@ -10,6 +10,7 @@ namespace Mall.Dto.Identity
 {
     public class LoginPostBody
     {
+        [Required]
         [JsonProperty("UserName")]
         public string Account { get; set; }
 

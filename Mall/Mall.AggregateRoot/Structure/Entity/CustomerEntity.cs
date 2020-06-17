@@ -37,5 +37,7 @@ namespace Mall.Aggregate.Structure.Entity
         /// 是否可见
         /// </summary>
         public bool IsVisible { get; set; }
+
+        public int OrganizationId { get; private set; }
     }
 }

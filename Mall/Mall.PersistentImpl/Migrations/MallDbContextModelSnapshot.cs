@@ -27,21 +27,15 @@ namespace Mall.PersistentImpl.Migrations
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
                     b.Property<string>("Account")
-                        .HasColumnType("nvarchar(max)");
+                        .HasColumnType("nvarchar(450)");
 
                     b.Property<DateTime>("CreateTime")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("datetime2")
-                        .HasDefaultValue(new DateTime(2020, 6, 14, 11, 36, 17, 148, DateTimeKind.Local).AddTicks(2158));
-
-                    b.Property<int>("Creater")
-                        .HasColumnType("int");
+                        .HasDefaultValue(new DateTime(2020, 6, 17, 11, 59, 0, 307, DateTimeKind.Local).AddTicks(3971));
 
                     b.Property<DateTime>("DeleteTime")
                         .HasColumnType("datetime2");
-
-                    b.Property<int>("Deleter")
-                        .HasColumnType("int");
 
                     b.Property<int>("EntityStatus")
                         .ValueGeneratedOnAdd()
@@ -52,10 +46,14 @@ namespace Mall.PersistentImpl.Migrations
                         .HasColumnType("bit");
 
                     b.Property<bool>("IsEnable")
-                        .HasColumnType("bit");
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bit")
+                        .HasDefaultValue(true);
 
                     b.Property<bool>("IsVisible")
-                        .HasColumnType("bit");
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bit")
+                        .HasDefaultValue(true);
 
                     b.Property<string>("Name")
                         .HasColumnType("nvarchar(max)");
@@ -67,6 +65,10 @@ namespace Mall.PersistentImpl.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("Account")
+                        .IsUnique()
+                        .HasFilter("[Account] IS NOT NULL");
 
                     b.HasIndex("OrganizationId");
 
@@ -83,16 +85,10 @@ namespace Mall.PersistentImpl.Migrations
                     b.Property<DateTime>("CreateTime")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("datetime2")
-                        .HasDefaultValue(new DateTime(2020, 6, 14, 11, 36, 17, 145, DateTimeKind.Local).AddTicks(1580));
-
-                    b.Property<int>("Creater")
-                        .HasColumnType("int");
+                        .HasDefaultValue(new DateTime(2020, 6, 17, 11, 59, 0, 306, DateTimeKind.Local).AddTicks(9802));
 
                     b.Property<DateTime>("DeleteTime")
                         .HasColumnType("datetime2");
-
-                    b.Property<int>("Deleter")
-                        .HasColumnType("int");
 
                     b.Property<int>("EntityStatus")
                         .ValueGeneratedOnAdd()
@@ -100,10 +96,14 @@ namespace Mall.PersistentImpl.Migrations
                         .HasDefaultValue(1);
 
                     b.Property<bool>("IsEnable")
-                        .HasColumnType("bit");
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bit")
+                        .HasDefaultValue(true);
 
                     b.Property<bool>("IsVisible")
-                        .HasColumnType("bit");
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bit")
+                        .HasDefaultValue(true);
 
                     b.Property<string>("Name")
                         .HasColumnType("nvarchar(max)");
@@ -129,7 +129,20 @@ namespace Mall.PersistentImpl.Migrations
                     b.Property<int>("DepartmentId")
                         .HasColumnType("int");
 
+                    b.Property<DateTime>("CreateTime")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("datetime2")
+                        .HasDefaultValue(new DateTime(2020, 6, 17, 11, 59, 0, 319, DateTimeKind.Local).AddTicks(9114));
+
                     b.Property<int>("CustomerRole")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasDefaultValue(1);
+
+                    b.Property<DateTime>("DeleteTime")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int>("EntityStatus")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
                         .HasDefaultValue(1);
@@ -151,16 +164,10 @@ namespace Mall.PersistentImpl.Migrations
                     b.Property<DateTime>("CreateTime")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("datetime2")
-                        .HasDefaultValue(new DateTime(2020, 6, 14, 11, 36, 17, 128, DateTimeKind.Local).AddTicks(6276));
-
-                    b.Property<int>("Creater")
-                        .HasColumnType("int");
+                        .HasDefaultValue(new DateTime(2020, 6, 17, 11, 59, 0, 299, DateTimeKind.Local).AddTicks(8144));
 
                     b.Property<DateTime>("DeleteTime")
                         .HasColumnType("datetime2");
-
-                    b.Property<int>("Deleter")
-                        .HasColumnType("int");
 
                     b.Property<int>("EntityStatus")
                         .ValueGeneratedOnAdd()
@@ -168,10 +175,9 @@ namespace Mall.PersistentImpl.Migrations
                         .HasDefaultValue(1);
 
                     b.Property<bool>("IsEnable")
-                        .HasColumnType("bit");
-
-                    b.Property<bool>("IsVisible")
-                        .HasColumnType("bit");
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bit")
+                        .HasDefaultValue(true);
 
                     b.Property<string>("Name")
                         .HasColumnType("nvarchar(max)");
@@ -192,10 +198,23 @@ namespace Mall.PersistentImpl.Migrations
                     b.Property<int>("ThirdPartyApp")
                         .HasColumnType("int");
 
-                    b.Property<bool>("IsEnable")
-                        .HasColumnType("bit");
+                    b.Property<DateTime>("CreateTime")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("datetime2")
+                        .HasDefaultValue(new DateTime(2020, 6, 17, 11, 59, 0, 322, DateTimeKind.Local).AddTicks(2270));
 
-                    b.Property<bool>("IsVisible")
+                    b.Property<DateTime>("DeleteTime")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int>("EntityStatus")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasDefaultValue(1);
+
+                    b.Property<int>("Id")
+                        .HasColumnType("int");
+
+                    b.Property<bool>("IsEnable")
                         .HasColumnType("bit");
 
                     b.Property<int>("OrganizationId")

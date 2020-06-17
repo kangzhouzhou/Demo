@@ -6,6 +6,7 @@ using Mall.Assembler;
 using Mall.Dto.Base;
 using Mall.Dto.Identity;
 using Mall.Repository.Structure;
+using Mall.Utility.Encryption;
 using Mall.Utility.Token;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.Extensions.Logging;
@@ -36,7 +37,7 @@ namespace Mall.ApplicationImpl
         {
             ResponseBody<string> responseBody = new ResponseBody<string>();
             CustomerAggregate customerAggregate = _customerResponsitory.GetByAccount(requestBody.Account);
-            if (customerAggregate == null || customerAggregate.IsVisible)
+            if (customerAggregate == null || !customerAggregate.IsVisible || customerAggregate.Password != MD5Utility.Encrypt32LowerCase(requestBody.Password))
             {
                 responseBody.Err = "账号或密码错误";
                 return responseBody;
@@ -45,14 +46,20 @@ namespace Mall.ApplicationImpl
             if (!customerAggregate.IsEnable)
             {
                 responseBody.Err = "账号已被禁用";
+                return responseBody;
+            }
+
+            if (!customerAggregate.OrganizationIsEnable)
+            {
+                responseBody.Err = "机构已被禁用";
+                return responseBody;
             }
 
             CustomerDto customer = new CustomerDto();
             customer.ClientType = Aggregate.Enums.ClientType.Account;
             customer.CustomerId = customerAggregate.Id;
             responseBody.Data = JWTUtility.JwtEncode(customer, _configuration.JwtSecret);
-            return null;
-
+            return responseBody;
         }
 
         public ResponseBody<string> ThirdParty(ThirdPartyPostBody requestBody)

@@ -45,8 +45,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mall.PersistentImpl", "Mall
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mall.AppConfig", "Mall.AppConfigurationImpl\Mall.AppConfig.csproj", "{478D7D2C-0EF6-47FE-A41E-8D4F287AA0AE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RobotMapper.UtilityTest", "RobotMapper.UtilityTest\RobotMapper.UtilityTest.csproj", "{229BDC8C-906F-4078-BB89-F482743C5493}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -117,10 +115,6 @@ Global
 		{478D7D2C-0EF6-47FE-A41E-8D4F287AA0AE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{478D7D2C-0EF6-47FE-A41E-8D4F287AA0AE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{478D7D2C-0EF6-47FE-A41E-8D4F287AA0AE}.Release|Any CPU.Build.0 = Release|Any CPU
-		{229BDC8C-906F-4078-BB89-F482743C5493}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{229BDC8C-906F-4078-BB89-F482743C5493}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{229BDC8C-906F-4078-BB89-F482743C5493}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{229BDC8C-906F-4078-BB89-F482743C5493}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -142,7 +136,6 @@ Global
 		{744255AB-38F2-4E59-94D6-37DEFC3BC9C0} = {B44FE9FB-1F0D-4663-BF94-1124BFEF125D}
 		{E6EDB5EA-2EB8-453E-B1A7-26D0FF936D05} = {B91FE29B-68FE-44FB-A27C-4A7749FC0BDC}
 		{478D7D2C-0EF6-47FE-A41E-8D4F287AA0AE} = {B91FE29B-68FE-44FB-A27C-4A7749FC0BDC}
-		{229BDC8C-906F-4078-BB89-F482743C5493} = {76BF882A-7DFA-4F17-9FB2-FF7720BF7A94}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {C0B81097-029B-4751-AA5F-0715D4E52373}

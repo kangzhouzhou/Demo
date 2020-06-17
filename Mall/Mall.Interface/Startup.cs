@@ -44,7 +44,7 @@ namespace Mall.Interface
 
             mvcBuilder.ConfigureApiBehaviorOptions(apiBehaviorOptions =>
             {
-                apiBehaviorOptions.SuppressModelStateInvalidFilter = false;
+                apiBehaviorOptions.SuppressModelStateInvalidFilter = true;
             });
 
             services.AddSwaggerGen(swaggerGenOptions =>
